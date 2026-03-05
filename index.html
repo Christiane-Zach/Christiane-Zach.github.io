@@ -1,10 +1,305 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
-  <title>Meine Entwicklerseite</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dein Name — Developer</title>
+  <meta name="description" content="Minimalistische Developer-Startseite mit Projekten und Kontakt." />
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --card: #12131a;
+      --text: #e9e9ee;
+      --muted: #a9abb6;
+      --border: rgba(255,255,255,.10);
+      --accent: #7c5cff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 980px;
+      --pad: 18px;
+    }
+    [data-theme="light"]{
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --text: #111217;
+      --muted: #4d4f59;
+      --border: rgba(0,0,0,.10);
+      --accent: #5a3bff;
+      --shadow: 0 10px 30px rgba(10,10,20,.08);
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px var(--pad) 80px; }
+    header{
+      position: sticky; top: 0;
+      backdrop-filter: blur(10px);
+      background: color-mix(in oklab, var(--bg) 75%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 50;
+    }
+    .nav{
+      max-width: var(--max); margin: 0 auto;
+      padding: 14px var(--pad);
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 650;
+      letter-spacing: .2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 20%, transparent);
+    }
+    .links{ display:flex; gap: 14px; flex-wrap: wrap; align-items:center; }
+    .links a{ color: var(--muted); font-size: 14px; }
+    .btn{
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .hero{
+      padding: 44px 0 24px;
+      display:grid;
+      gap: 16px;
+    }
+    h1{
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+    }
+    .sub{
+      max-width: 70ch;
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px;
+    }
+    .pillrow{ display:flex; gap:10px; flex-wrap: wrap; margin-top: 10px; }
+    .pill{
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 85%, transparent);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .grid{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    section{ scroll-margin-top: 84px; }
+    .card{
+      grid-column: span 12;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .card p{ margin: 0; color: var(--muted); }
+
+    /* Projects */
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .project{
+      grid-column: span 12;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: color-mix(in oklab, var(--card) 90%, transparent);
+    }
+    .project h3{
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+    .project .meta{
+      display:flex; gap:10px; flex-wrap: wrap;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .tag{
+      border: 1px solid var(--border);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    /* Responsive: on wider screens, split cards */
+    @media (min-width: 820px){
+      .about{ grid-column: span 7; }
+      .contact{ grid-column: span 5; }
+      .project{ grid-column: span 6; }
+    }
+
+    footer{
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+    .smalllink{ color: var(--muted); }
+  </style>
 </head>
+
 <body>
-  <h1>Hallo!</h1>
-  <p>Meine Entwicklerseite ist gerade im Aufbau.</p>
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <a href="#top" class="brandlink">Dein Name</a>
+      </div>
+
+      <div class="links">
+        <a href="#about">Über mich</a>
+        <a href="#projects">Projekte</a>
+        <a href="#contact">Kontakt</a>
+        <button class="btn" id="themeBtn" type="button" aria-label="Theme wechseln">🌓</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap" id="top">
+    <div class="hero">
+      <h1>Hi, ich bin Dein Name.</h1>
+      <p class="sub">
+        Entwickler: Java / Python — ich baue gerne saubere, robuste Software.
+        Hier kommen nach und nach Projekte, Notizen und kleine Experimente dazu.
+      </p>
+
+      <div class="pillrow" aria-label="Highlights">
+        <span class="pill">Java</span>
+        <span class="pill">Python</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Backend</span>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card about" id="about">
+        <h2>Über mich</h2>
+        <p>
+          Kurzer Text: woran du arbeitest, worauf du Lust hast, was du gut kannst.
+          (Später kannst du hier auch Lebenslauf-Link oder Skills ergänzen.)
+        </p>
+      </section>
+
+      <section class="card contact" id="contact">
+        <h2>Kontakt</h2>
+        <p>
+          <a class="smalllink" href="mailto:dein.name@email.com">dein.name@email.com</a><br/>
+          <a class="smalllink" href="https://github.com/DEIN_GITHUB" target="_blank" rel="noreferrer">GitHub</a> ·
+          <a class="smalllink" href="https://www.linkedin.com/in/DEIN_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>
+        </p>
+      </section>
+
+      <section class="card" id="projects">
+        <h2>Projekte</h2>
+        <p>Platzhalter-Kacheln — später ersetzt du sie durch echte Projekte.</p>
+
+        <div class="projects" id="projectGrid">
+          <!-- Du kannst diese Cards später per JS auch automatisch generieren -->
+          <article class="project">
+            <h3>Projektname 1</h3>
+            <p class="sub">Kurzer Satz, worum es geht. (z.B. REST API, Tool, CLI, …)</p>
+            <div class="meta">
+              <span class="tag">Java</span>
+              <span class="tag">Spring</span>
+              <a class="smalllink" href="#" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Projektname 2</h3>
+            <p class="sub">Kurzer Satz, worum es geht.</p>
+            <div class="meta">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <a class="smalllink" href="#" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <span>© <span id="year"></span> Dein Name</span>
+      <span>
+        <a class="smalllink" href="#top">Nach oben</a>
+      </span>
+    </footer>
+  </main>
+
+  <script>
+    // --- Footer year ---
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // --- Theme toggle (saved in localStorage) ---
+    const themeBtn = document.getElementById("themeBtn");
+    const root = document.documentElement;
+
+    function setTheme(theme) {
+      if (theme === "light") root.setAttribute("data-theme", "light");
+      else root.removeAttribute("data-theme");
+      localStorage.setItem("theme", theme);
+    }
+
+    const saved = localStorage.getItem("theme");
+    if (saved) setTheme(saved);
+
+    themeBtn.addEventListener("click", () => {
+      const isLight = root.getAttribute("data-theme") === "light";
+      setTheme(isLight ? "dark" : "light");
+    });
+
+    // Optional: smooth-scroll fallback for older browsers
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("href");
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.pushState(null, "", id);
+      });
+    });
+  </script>
 </body>
 </html>
