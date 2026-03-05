@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dein Name — Developer</title>
+  <title>Mein Weg zum Data-Scientist</title>
   <meta name="description" content="Minimalistische Developer-Startseite mit Projekten und Kontakt." />
 
   <style>
@@ -127,7 +127,7 @@
     }
     .card p{ margin: 0; color: var(--muted); }
 
-    /* Projects */
+    /* Projects 
     .projects{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -155,13 +155,13 @@
       border: 1px solid var(--border);
       padding: 4px 8px;
       border-radius: 999px;
-    }
+    }*/
 
     /* Responsive: on wider screens, split cards */
     @media (min-width: 820px){
       .about{ grid-column: span 7; }
       .contact{ grid-column: span 5; }
-      .project{ grid-column: span 6; }
+      /*.project{ grid-column: span 6; }*/
     }
 
     footer{
@@ -184,12 +184,12 @@
     <nav class="nav">
       <div class="brand">
         <span class="dot" aria-hidden="true"></span>
-        <a href="#top" class="brandlink">Dein Name</a>
+        <a href="#top" class="brandlink">Christiane Zach</a>
       </div>
 
       <div class="links">
         <a href="#about">Über mich</a>
-        <a href="#projects">Projekte</a>
+        <!--<a href="#projects">Projekte</a>-->
         <a href="#contact">Kontakt</a>
         <button class="btn" id="themeBtn" type="button" aria-label="Theme wechseln">🌓</button>
       </div>
@@ -198,18 +198,20 @@
 
   <main class="wrap" id="top">
     <div class="hero">
-      <h1>Hi, ich bin Dein Name.</h1>
+      <h1>Willkommen</h1>
       <p class="sub">
-        Entwickler: Java / Python — ich baue gerne saubere, robuste Software.
-        Hier kommen nach und nach Projekte, Notizen und kleine Experimente dazu.
+        Java Full-Stack Entwickler auf dem Weg in die Data Science
+
+      Mit Hintergrund in Physik und mehreren Jahren Erfahrung in der Softwareentwicklung.
+      Hier entstehen kleine Projekte an der Schnittstelle von Code, Daten und Modellen.
       </p>
 
-      <div class="pillrow" aria-label="Highlights">
+      <!--<div class="pillrow" aria-label="Highlights">
         <span class="pill">Java</span>
         <span class="pill">Python</span>
         <span class="pill">SQL</span>
         <span class="pill">Backend</span>
-      </div>
+      </div>-->
     </div>
 
     <div class="grid">
@@ -230,12 +232,12 @@
         </p>
       </section>
 
-      <section class="card" id="projects">
+      <!--<section class="card" id="projects">
         <h2>Projekte</h2>
         <p>Platzhalter-Kacheln — später ersetzt du sie durch echte Projekte.</p>
 
         <div class="projects" id="projectGrid">
-          <!-- Du kannst diese Cards später per JS auch automatisch generieren -->
+          <!-- Du kannst diese Cards später per JS auch automatisch generieren
           <article class="project">
             <h3>Projektname 1</h3>
             <p class="sub">Kurzer Satz, worum es geht. (z.B. REST API, Tool, CLI, …)</p>
@@ -256,11 +258,11 @@
             </div>
           </article>
         </div>
-      </section>
+      </section> -->
     </div>
 
     <footer>
-      <span>© <span id="year"></span> Dein Name</span>
+      <span>© <span id="year"></span> Christiane Zach</span>
       <span>
         <a class="smalllink" href="#top">Nach oben</a>
       </span>
