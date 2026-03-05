@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Why should I volunteer?</title>
+		<link rel="stylesheet" href="charityStyleSheet.css" /> 
+	</head>
+	<body>
+		<div class="page-container">
+			<!-- header -->
+			<div class="row">
+				<div class="col12 header">
+					<p>empty</p>
+				</div>
+			</div>
+			<!-- logo -->
+			<div class="row">
+				<div class="logo col2">
+					<img src="blue_hand1.jfif" height=80px>
+				</div>
+				<div class="col10 last-col empty">
+					<h2>empty</h2>
+				</div>
+			</div>
+			<!-- Why should I volunteer? -->
+			<div class="row">
+				<div class="col12 volun">
+					<h2>Why should I volunteer?</h2>
+				</div>
+			</div>
+			<!-- Reasons to volunteer -->
+			<div class="row">
+				<div class="col8 difference">
+					<img src="volunteer-heart.jpg" height=350px>
+				</div>
+				<div class="col4 last-col reasons">
+					<p><b>5 REASONS TO VOLUNTEER</b></p>
+					<p>1. GIVE BACK <br />
+						actions speak louder than words</p>
+					<p>2. IT'S GOOD FOR YOU <br />
+						improves your mental and physical health</p>
+					<p>3. NEW EXPERIENCE <br />
+						get out of your comfort zone</p>
+					<p>4. YOUR RESUME <br />
+						looks great and opens doors</p>
+					<p>5. IT'S FUN! <br />
+						make friends and have fun</p>
+				</div>
+			</div>
+			<!-- free space -->
+			<div class="row">
+				<div class="col12 empty">
+				</div>
+			</div>
+			<!-- Experience quotes -->
+			<div class="row">
+				<div class="col2 empty">
+					<h2>empty</h2>
+				</div>
+				<div class="col4 quotes">
+					<p>“Service to others is the rent you pay for your room here on Earth.” <br /> Muhammad Ali </p>
+				</div>
+				<div class="col4 quotes">
+					<p>“Volunteers don’t get paid, not because they’re worthless, but because they’re priceless.” <br /> Sherry Anderson</p>
+				</div>
+				<div class="col2 last-col empty">
+					<h2>empty</h2>
+				</div>
+			</div>
+			<!-- How can I volunteer? -->
+			<div class="row">
+				<div class="col12 volun">
+					<h2>How can I volunteer?</h2>
+				</div>
+			</div>
+			<!-- volunteering offers -->
+			<div class="row">
+				<div class="col4 reasons">
+					<h2>for persons</h2>
+						<p> <b>What skills do I need? </b> <br />
+						You should not be afraid of any person. Instead you should be able to approach others. </p>
+						<p> <b>What can I do? </b>  <br />
+						There are a lot of different kind of persons with different needs and in different parts of the world. You can help children, adults and old persons. Also you can specialize yourself on persons with special needs.</p>
+						<p> <b>first contacts: </b> <br />
+						<a href=https://www.caritas.de>Caritas</a> <br />
+						<a href=https://www.drk.de>Rotes Kreuz</a> <br />
+						<a href=https://www.volunteerwolrd.com>Volunteer abroad</a>
+						</p>
+
+				</div>
+				<div class="col4 reasons">
+					<h2>for animals</h2>
+						<p> <b>What skills do I need? </b> <br />
+						You should not be afraid of the animal. Instead you should be able to understand it. </p>
+						<p> <b>What can I do? </b> <br />
+						There are a lot of different kind of animals with different needs and in different parts of the world. You can help the animal shelter or the zoo as well as the free living animals.</p>
+						<p> <b>first contacts: </b> <br />
+						<a href=https://www.malteser.de/aware/engagement/ehrenamt-mit-herz-helfen-im-tierheim.html>animal shelter</a> <br />
+						<a href=https://www.volunteerhq.org>volunteer abroad </a></p>
+				</div>
+				<div class="col4 last-col reasons">
+					<h2>in crisis situations</h2>
+					<p> <b>What skills do I need? </b> <br />
+						Here it is important, that you can stand a crisis in the situation itself and also after the situation.</p>
+						<p> <b>What can I do? </b> <br />
+						When there is a crisis situation such as fire, accident or storm. People are very happy about all kind of help.</p>
+						<p> <b>first contacts: </b> <br />
+						<a href=https://www.drk.de>Rotes Kreuz</a> <br />
+						<a href=https://www.thw.de>THW</a> <br />
+						
+				</div>
+			</div>
+			<!-- footer text -->
+			<div class="row">
+				<div class="header col12">
+					<a href="uber_uns.html">Über uns</a> |
+					<a href="presse.html">Presse</a> |
+					<a href="news.html">News</a> | 
+					<a href="blog.html">Blog</a> | 
+					<a href="faq.html">FAQ</a> |
+					<a href="impressum.html">Impressum</a>| <a href="datenschutz.html">Datenschutzerklärung</a> | 
+					<a href="agb.html">AGB</a>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
