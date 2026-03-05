@@ -1,0 +1,102 @@
+* {
+	box-sizing: border-box;
+}
+
+.page-container {
+	margin: 0 auto;
+	max-width: 1020px;
+}
+
+.last-col{
+	margin: 0;
+}
+
+.col1 { width: 5.5%; }
+.col2 { width: 14%; }
+.col3 { width: 22.5%; }
+.col4 { width: 31%; }
+.col5 { width: 39.5%; }
+.col6 { width: 48%;}
+.col7 { width: 56.5%; }
+.col8 { width: 65%; }
+.col9 { width: 73.5%; }
+.col10 { width: 82%; }
+.col11 { width: 90.5%; }
+.col12 { width: 99%; margin: 0;}
+
+.header{
+	float: left;
+	margin: 0 3% 0 0;
+	background: #33ACFF;
+	color:  #33ACFF;
+}
+
+.empty{
+	float: left;
+	height: 30 px;
+	background: #FFFFFF;
+	text-align: center;
+	color: #FFFFFF;
+	margin: 2% 2% 2% 0;
+}
+
+.logo{
+	float: left;
+	border: solid 2px black;
+	text-align: center;
+	margin: 2% 2% 2% 0;
+}
+
+.volun{
+	background: url(joining_hands.jpg);
+	background-repeat:  no-repeat;
+	background-position:  center;
+	background-size: 1020px 500px;
+	float: left;
+	margin: 0 3% 0 0;
+	text-align:  center;
+	color:  #FFFFFF;
+}
+
+.reasons{
+	background: #33ACFF;
+	float: right;
+	text-align:  center;
+	color:  #FFFFFF;
+	margin: 2% 2% 2% 0;
+}
+
+.difference{
+	background: #FFFFFF;
+	float: left;
+	margin: 2% 2% 2% 0;
+}
+
+.quotes{
+	float: left;
+	margin: 0 2% 2% 0;
+	/*height: 30 px;*/
+	border: solid 2px black;
+	background: #33ACFF;
+	text-align: center;
+}
+
+@media only screen and (max-width : 600px)
+{	
+	.logo, .empty, .header{
+		height: 0px;
+		border: solid 0px black;
+		display:  none;
+		margin: 0 0 0 0;
+	}
+
+	.reasons{
+		float: left;
+	}
+
+	.col1, .col2, .col3, .col4, .col5, .col6,.col7, .col8,
+	.col9, .col10, .col11, .col12{
+		width: 100%;
+	}
+	
+}
