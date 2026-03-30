@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="site-header">
     <nav class="nav">
       <div class="brand">
         <span class="dot" aria-hidden="true"></span>
@@ -19,23 +19,15 @@
         <a href="#about">Über mich</a>
         <a href="#projects">Projekte</a>
         <a href="#contact">Kontakt</a>
-        <button class="btn" id="themeBtn" type="button" aria-label="Theme wechseln">🌓</button>
       </div>
     </nav>
   </header>
 
-  <main class="wrap" id="top">
-    <div class="hero">
-      <h1>Willkommen</h1>
-      <p class="sub">
-        Ich war ein Java Full-Stack Entwickler und befinde mich auf dem Weg in die Data Science <br> <br>
-
-        mit Hintergrund in Physik und mehreren Jahren Erfahrung in der Softwareentwicklung. <br>
-        Hier entstehen kleine Projekte an der Schnittstelle von Code, Daten und Modellen.
-      </p>
-    </div>
-
-    <section class="card" id="projects">
+  <main id="top">
+    <section class="hero-image" aria-label="Titelbild">
+    </section>
+    <div class= "wrap">
+      <section class="card" id="projects">
         <h2>Projekte</h2>
 
         <div class="projects" id="projectGrid">
@@ -101,23 +93,7 @@
     // --- Footer year ---
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // --- Theme toggle (saved in localStorage) ---
-    const themeBtn = document.getElementById("themeBtn");
-    const root = document.documentElement;
-
-    function setTheme(theme) {
-      if (theme === "light") root.setAttribute("data-theme", "light");
-      else root.removeAttribute("data-theme");
-      localStorage.setItem("theme", theme);
-    }
-
-    const saved = localStorage.getItem("theme");
-    if (saved) setTheme(saved);
-
-    themeBtn.addEventListener("click", () => {
-      const isLight = root.getAttribute("data-theme") === "light";
-      setTheme(isLight ? "dark" : "light");
-    });
+    
 
     // Optional: smooth-scroll fallback for older browsers
     document.querySelectorAll('a[href^="#"]').forEach(a => {
