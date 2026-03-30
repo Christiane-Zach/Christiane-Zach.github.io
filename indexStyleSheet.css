@@ -1,171 +1,137 @@
-:root{
-      --bg: #0b0c0f;
-      --card: #12131a;
-      --text: #e9e9ee;
-      --muted: #a9abb6;
-      --border: rgba(255,255,255,.10);
-      --accent: #7c5cff;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 980px;
-      --pad: 18px;
-    }
-    [data-theme="light"]{
-      --bg: #f7f7fb;
-      --card: #ffffff;
-      --text: #111217;
-      --muted: #4d4f59;
-      --border: rgba(0,0,0,.10);
-      --accent: #5a3bff;
-      --shadow: 0 10px 30px rgba(10,10,20,.08);
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui;
-      background-image: url("background.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: var(--text);
-    }
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #071a2d;
+  color: white;
+}
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px var(--pad) 80px; }
-    header{
-      position: sticky; top: 0;
-      backdrop-filter: blur(10px);
-      background: color-mix(in oklab, var(--bg) 75%, transparent);
-      border-bottom: 1px solid var(--border);
-      z-index: 50;
-    }
-    .nav{
-      max-width: var(--max); margin: 0 auto;
-      padding: 14px var(--pad);
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 650;
-      letter-spacing: .2px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 20%, transparent);
-    }
-    .links{ display:flex; gap: 14px; flex-wrap: wrap; align-items:center; }
-    .links a{ color: var(--muted); font-size: 14px; }
-    .btn{
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      padding: 8px 12px;
-      border-radius: 999px;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .btn:active{ transform: translateY(1px); }
+/* Sticky, transparente Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .hero{
-      padding: 44px 0 24px;
-      display:grid;
-      gap: 16px;
-    }
-    h1{
-      margin: 0;
-      font-size: clamp(28px, 4vw, 44px);
-      letter-spacing: -0.8px;
-      line-height: 1.15;
-    }
-    .sub{
-      max-width: 70ch;
-      color: var(--muted);
-      margin: 0;
-      font-size: 16px;
-    }
-    .pillrow{ display:flex; gap:10px; flex-wrap: wrap; margin-top: 10px; }
-    .pill{
-      border: 1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 85%, transparent);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .grid{
-      margin-top: 26px;
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    section{ scroll-margin-top: 84px; }
-    .card{
-      grid-column: span 12;
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 16px;
-      letter-spacing: .2px;
-    }
-    .card p{ margin: 0; color: var(--muted); }
+.site-header.scrolled {
+  background: rgba(5, 15, 30, 0.78);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
 
-    /* Projects */
-    .projects{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-      margin-top: 12px;
-    }
-    .project{
-      grid-column: span 12;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-      background: color-mix(in oklab, var(--card) 90%, transparent);
-    }
-    .project h3{
-      margin: 0 0 6px;
-      font-size: 15px;
-    }
-    .project .meta{
-      display:flex; gap:10px; flex-wrap: wrap;
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .tag{
-      border: 1px solid var(--border);
-      padding: 4px 8px;
-      border-radius: 999px;
-    }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
 
-    /* Responsive: on wider screens, split cards */
-    @media (min-width: 820px){
-      .about{ grid-column: span 7; }
-      .contact{ grid-column: span 5; }
-      .project{ grid-column: span 6; }
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
 
-    footer{
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 13px;
-      display:flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--border);
-      padding-top: 18px;
-    }
-    .smalllink{ color: var(--muted); }
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 10px white;
+}
+
+.brandlink,
+.links a,
+.smalllink {
+  color: white;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Fullscreen Hero-Bild */
+.hero-image {
+  height: 100vh;
+  width: 100%;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Inhalt darunter */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.projects {
+  display: grid;
+  gap: 1rem;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.tag {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 800px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
