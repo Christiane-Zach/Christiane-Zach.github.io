@@ -49,7 +49,7 @@ body {
 .links a,
 .smalllink {
   color: white;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .links {
@@ -133,5 +133,13 @@ footer {
   .links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .hero-image {
+    height: 70vh;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #071a2d;
   }
 }
