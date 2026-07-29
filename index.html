@@ -27,6 +27,7 @@
     <section class="hero-image" aria-label="Titelbild">
     </section>
     <div class= "wrap">
+
       <section class="card about" id="about">
         <h2>Über mich</h2>
         <p>
@@ -38,18 +39,7 @@
       
       <section class="card" id="projects">
         <h2>Projekte</h2>
-
-        <div class="projects" id="projectGrid">
-          <article class="project">
-            <h3>Datenanalyse meiner Diamond Painitng Projekte</h3>
-            <p class="sub">Da macht das Basteln gleich 2x Spaß!</p>
-            <p class="sub">Coming soon</p>
-            <div class="meta">
-              <span class="tag">Python</span>
-            </div>
-          </article>
           
-
         <div class="projects" id="projectGrid">
           <article class="project">
             <h3>kleine Spiele mit Python</h3>
@@ -59,6 +49,15 @@
               <span class="tag">Streamlit</span>
               <a class="smalllink" href="https://dsi-python-projekte.streamlit.app">zur Webseite</a>
               <a class="smalllink" href="https://github.com/Christiane-Zach/PythonProjekte">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Analyse des weltweiten Energieverbrauchs pro Kopf</h3>
+            <p class="sub">mit einem Datensatz von ourworldindata.org</p>
+            <div class="meta">
+              <span class="tag">Excel</span>
+              <a class="smalllink" href="https://github.com/Christiane-Zach/Pro-Kopf-Energieverbrauch">GitHub</a>
             </div>
           </article>
           
@@ -93,7 +92,7 @@
             </div>
           </article>
       </section>
-    
+      
       <section class="card contact" id="contact">
         <h2>Kontakt</h2>
         <p>
@@ -114,12 +113,8 @@
   </main>
 
   <script>
-    // --- Footer year ---
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    
-
-    // Optional: smooth-scroll fallback for older browsers
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener("click", (e) => {
         const id = a.getAttribute("href");
@@ -131,5 +126,3 @@
       });
     });
   </script>
-</body>
-</html>
